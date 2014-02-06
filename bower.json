@@ -1,0 +1,13 @@
+{
+	"name": "grout-framework",
+	"version": "0.0.1",
+	"main": "dist/css/grout.css",
+	"ignore": [
+		".jshintrc",
+		"**/*.txt"
+	],
+	"dependencies": {
+	},
+	"devDependencies": {
+	}
+}
