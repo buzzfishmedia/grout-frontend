@@ -1,0 +1,63 @@
+//++++++++++++++++++++++++++++++++++++++++
+//++	Grid
+//++++++++++++++++++++++++++++++++++++++++
+
+
+//++	Default Values
+//++++++++++++++++++++++++++++++++++++++++
+$gf-numColumns: 24 !default;
+$gf-colPadding: 0px !default;
+$gf-container-width: 80% !default;
+
+//++	Functions
+//++++++++++++++++++++++++++++++++++++++++
+@function grid-calc( $colNumber ) {
+	@return percentage( ($colNumber / $gf-numColumns) );
+}
+
+//++	Mixins
+//++++++++++++++++++++++++++++++++++++++++
+@mixin col($i) {
+	width: grid-calc( $i );
+}
+
+
+// Column Parent
+.row {
+	&:after,
+	& .container:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+
+	> .container {
+		width: $gf-container-width;
+	}
+}
+
+.container{
+	margin: 0px auto;
+	display: block;
+}
+
+// Columns
+[class*='col-'] {
+	float: left;
+	padding-right: $gf-colPadding;
+
+	&:last-of-type {
+		padding-right: 0px;
+	}
+}
+
+//++	Generate Columns
+//++++++++++++++++++++++++++++++++++++++++
+@for $i from 1 through 24 {
+  [class*='col-#{$i}'] { width: grid-calc($i); }
+}
+
+@for $i from 1 through 24 {
+  [class*='col-offset-#{$i}'] { margin-left: grid-calc($i); float: right; }
+}
+
