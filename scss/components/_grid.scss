@@ -20,16 +20,14 @@ $gf-container-width: 80% !default;
 @mixin col($i) {
 	width: grid-calc( $i );
 }
+@mixin offset-col($i) {
+	margin-left: grid-calc( $i); 
+}
 
 
 // Column Parent
 .row {
-	&:after,
-	& .container:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
+	@include clearfix();
 
 	> .container {
 		width: $gf-container-width;
@@ -37,6 +35,7 @@ $gf-container-width: 80% !default;
 }
 
 .container{
+	@include clearfix();
 	margin: 0px auto;
 	display: block;
 }
@@ -53,11 +52,16 @@ $gf-container-width: 80% !default;
 
 //++	Generate Columns
 //++++++++++++++++++++++++++++++++++++++++
+
+// Columns
 @for $i from 1 through 24 {
   [class*='col-#{$i}'] { width: grid-calc($i); }
 }
 
+// Offset Columns
 @for $i from 1 through 24 {
-  [class*='col-offset-#{$i}'] { margin-left: grid-calc($i); float: right; }
+  [class*='col-offset-#{$i}'] {
+  	@include offset-col($i);
+  }
 }
 
