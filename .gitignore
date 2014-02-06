@@ -1,0 +1,11 @@
+# OSX Files
+.DS_Store
+
+# SASS
+.sass-cache
+
+# NPM/Node
+node_modules
+
+# Bower
+bower_components
