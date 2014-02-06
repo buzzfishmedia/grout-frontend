@@ -1,0 +1,179 @@
+//++++++++++++++++++++++++++++++++++++++++
+//++	Grid
+//++++++++++++++++++++++++++++++++++++++++
+
+$gf-menu-width: 125px !default;
+$gf-menu-font-size: 1.6 !default;
+$gf-padding-value: 0px !default;
+$gf-padding-value-top: $gf-padding-value !default;
+$gf-padding-value-right: $gf-padding-value !default;
+$gf-padding-value-bottom: $gf-padding-value !default;
+$gf-padding-value-left: $gf-padding-value !default;
+$gf-default-padding: $gf-padding-value-top $gf-padding-value-right $gf-padding-value-bottom $gf-padding-value-left !default;
+
+.navbar {
+
+	ul {
+		width: 100%;
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		border: 1px solid green;
+
+		li {
+			position: relative;
+
+			> ul {
+				display: none;
+			}
+		}
+	}
+
+	a {
+		@include font-size($gf-menu-font-size);
+		padding: $gf-default-padding;
+		display: block;
+		&:hover {
+			background-color: darken(#fff, 30%);
+		}
+	}
+
+	&[class*="navbar-horizontal"] {
+		@extend .navbar-horizontal;
+	}
+
+	
+
+	// Stacked Navbar
+	&[class*="navbar-stacked"] {
+		@extend .navbar-stacked;
+	}
+
+}
+
+// Horizontal Navbar
+.navbar-horizontal{
+	ul {
+		li {
+			display: inline-block;
+			position: relative;
+
+			&:hover > ul {
+				display: block;
+				position: absolute;
+				top: 100%;
+				z-index: 100;
+				width: $gf-menu-width;
+			}
+		}
+	}
+
+	ul ul {
+		display: none;
+
+		li {
+			display: block;
+			position: relative;
+
+			&:hover > ul {
+				display: block;
+				position: absolute;
+				z-index: 100;
+				top: -1px;
+				left: ($gf-menu-width) - 1px;
+				width: $gf-menu-width;
+
+				li {
+					position: relative;
+				}
+			}
+		}
+	}
+
+	ul ul ul {
+		display: none;
+
+		li {
+			display: block;
+			position: relative;
+
+			&:hover > ul {
+				display: block;
+				position: absolute;
+				z-index: 100;
+				top: 0px;
+				left: ($gf-menu-width) - 2px;
+				width: $gf-menu-width;
+
+				li {
+					position: relative;
+				}
+			}
+		}
+	}
+
+	a {
+		display: block;
+	}
+}
+
+.navbar-stacked {
+	ul {
+		max-width: $gf-menu-width;
+
+		li {
+			display: block;
+			width: 100%;
+			position: relative;
+
+			&:hover > ul {
+				min-width: $gf-menu-width;
+				display: block;
+				position: absolute;
+				top: -1px;
+				left: ($gf-menu-width) - 1px;
+			}
+		}
+	}
+
+	ul ul {
+		max-width: $gf-menu-width;
+
+		li {
+			display: block;
+			width: 100%;
+			position: relative;
+
+			&:hover > ul {
+				min-width: $gf-menu-width;
+				display: block;
+				position: absolute;
+				top: -1px;
+				left: ($gf-menu-width) - 2px;
+			}
+		}
+	}
+
+	ul ul ul {
+		display: none;
+
+		li {
+			display: block;
+			position: relative;
+
+			&:hover > ul {
+				display: block;
+				position: absolute;
+				z-index: 100;
+				top: 0px;
+				left: ($gf-menu-width) - 2px;
+				width: $gf-menu-width;
+
+				li {
+					position: relative;
+				}
+			}
+		}
+	}
+
+}
