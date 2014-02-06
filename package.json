@@ -1,0 +1,14 @@
+{
+	"name": "grout-framework",
+	"version": "0.0.1",
+	"homepage": "http://buzzfishmedia.github.io/grout-frontend",
+	"repository": {
+		"type" : "git",
+		"url" : "http://github.com/buzzfishmedia/grout-frontend.git"
+	},
+	"devDependencies": {
+		"grunt": "*",
+		"grunt-contrib-sass": "*",
+		"grunt-contrib-watch": "*"
+	}
+}
