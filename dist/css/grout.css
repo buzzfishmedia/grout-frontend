@@ -235,9 +235,45 @@ body {
   font-size: 1em;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.2rem 0 0.5rem;
+  line-height: 148%;
+  font-weight: 400;
+  -webkit-margin-before: 0px;
+  -webkit-margin-after: 0px;
+}
+h1:first-of-type, h2:first-of-type, h3:first-of-type, h4:first-of-type, h5:first-of-type, h6:first-of-type {
+  margin-top: 0px;
+}
+
 h1 {
-  font-size: 36px;
-  font-size: 3.6rem;
+  font-size: 44px;
+  font-size: 4.4rem;
+}
+
+h2 {
+  font-size: 37px;
+  font-size: 3.7rem;
+}
+
+h3 {
+  font-size: 27px;
+  font-size: 2.7rem;
+}
+
+h4 {
+  font-size: 23px;
+  font-size: 2.3rem;
+}
+
+h5 {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+h6 {
+  font-size: 10px;
+  font-size: 1rem;
 }
 
 .row:before, .row:after {
@@ -629,12 +665,4 @@ h1 {
 }
 .navbar-justified ul ul li, .navbar[class*="navbar-justified"] ul ul li {
   width: 100%;
-}
-
-.branding {
-  width: 16.66667%;
-}
-
-.main {
-  margin-left: 16.66667%;
 }

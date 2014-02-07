@@ -11,6 +11,7 @@ $gf-padding-value-bottom: $gf-padding-value !default;
 $gf-padding-value-left: $gf-padding-value !default;
 $gf-default-padding: $gf-padding-value-top $gf-padding-value-right $gf-padding-value-bottom $gf-padding-value-left !default;
 $gf-menu-item-bg: #fff !default;
+
 .navbar {
 	@include clearfix();
 

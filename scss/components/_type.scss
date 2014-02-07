@@ -1,0 +1,30 @@
+//++++++++++++++++++++++++++++++++++++++++
+//++	Type
+//++++++++++++++++++++++++++++++++++++++++
+
+// Default Values
+$gf-base-font-size: 16px !default;
+$gf-base-line-height: 148% !default;
+$gf-base-rem: $gf-base-font-size !default;
+
+$gf-header-font-weight: 400 !default;
+$gf-header-top-margin: .2rem !default;
+$gf-header-bottom-margin: .5rem !default;
+
+h1,h2,h3,h4,h5,h6 {
+	margin: $gf-header-top-margin 0 $gf-header-bottom-margin;
+	line-height: $gf-base-line-height;
+	font-weight: $gf-header-font-weight;
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+	&:first-of-type {
+		margin-top: 0px;
+	}
+}
+
+h1 { @include font-size(4.4); }
+h2 { @include font-size(3.7); }
+h3 { @include font-size(2.7); }
+h4 { @include font-size(2.3); }
+h5 { @include font-size(1.6); }
+h6 { @include font-size(1.0) }
