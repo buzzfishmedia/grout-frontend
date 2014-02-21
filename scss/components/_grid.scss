@@ -6,8 +6,9 @@
 //++	Default Values
 //++++++++++++++++++++++++++++++++++++++++
 $gf-numColumns: 24 !default;
-$gf-colPadding: 0px !default;
+$gf-colPadding: 15px !default;
 $gf-container-width: 80% !default;
+$gf-float-direction: left !default;
 
 //++	Functions
 //++++++++++++++++++++++++++++++++++++++++
@@ -19,6 +20,7 @@ $gf-container-width: 80% !default;
 //++++++++++++++++++++++++++++++++++++++++
 @mixin col($i) {
 	width: grid-calc( $i );
+	float: $gf-float-direction;
 }
 @mixin offset-col($i) {
 	margin-left: grid-calc( $i); 
@@ -38,11 +40,11 @@ $gf-container-width: 80% !default;
 	@include clearfix();
 	margin: 0px auto;
 	display: block;
+	width: 100%;
 }
 
 // Columns
 [class*='col-'] {
-	float: left;
 	padding-right: $gf-colPadding;
 
 	&:last-of-type {
@@ -55,7 +57,7 @@ $gf-container-width: 80% !default;
 
 // Columns
 @for $i from 1 through 24 {
-  [class*='col-#{$i}'] { width: grid-calc($i); }
+  [class*='col-#{$i}'] { @include col($i); }
 }
 
 // Offset Columns
