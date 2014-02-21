@@ -224,3 +224,13 @@ $gf-menu-item-bg: #fff !default;
 		width: $gf-menu-width;
 	}
 }
+
+[data-menu*="navbar-collapse"] {
+	@media (max-width: 480px)
+	{
+		ul {
+			display: none;
+		}
+	}
+	
+}
