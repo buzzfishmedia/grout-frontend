@@ -16,5 +16,5 @@ html {
 
 body {
 	margin: 0px;
-	font-size:1em;
+	@include font-size(1.6);
 }
